@@ -5,7 +5,7 @@
   "description": "",
   "author": "",
   "scripts": {
-    "serve": "vue serve src/index.vue",
+    "serve": "vue serve src/App.vue",
     "build": "npx bili --bundle-node-modules --env.NODE_ENV production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,7 @@
   "dependencies": {
     "bw-material": "^1.0.2",
     "material-design-icons": "^3.0.1",
-    "vee-validate": "^3.2.5",
+    "vee-validate": "^2.2.15",
     "vue-form-generator": "^2.3.4"
   },
   "devDependencies": {

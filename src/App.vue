@@ -1,22 +1,30 @@
 <template>
-    <div class="app2">
+    <div class="app">
         <vue-form-generator ref="dataTextForm"
-        @validated="onValidateData"
-        :schema="schemaText"
-        :model="modelText"
-        :options="formOptions"
+            @validated="onValidateData"
+            :schema="schemaText"
+            :model="modelText"
+            :options="formOptions"
         >
         </vue-form-generator> 
+        
+        {{modelText}}
+        
+        <bw-material-button v-on:click-btn="submitTextForm"
+            label="submit" class="mb-4" type="contain" color="secondary"
+            size="small"
+        ></bw-material-button>
     </div>
 </template>
 
 <script>
+
 import Vue from 'vue';
-
 import BwMaterialFG from './index';
-Vue.use(BwMaterialFG);
 
+Vue.use(BwMaterialFG);
     export default {
+        inject: ['$validator'],
         data () {
             return {
                 schemaText: {
@@ -64,8 +72,21 @@ Vue.use(BwMaterialFG);
         components: {
         },
         methods: {
-            onValidateData() {}
+            onValidateData() {},
+            submitTextForm() {
+                this.$validator.validate('examplescope.*').then(valid => {
+                    if (!valid) {
+                        console.log('invalid data format');
+                    // do stuff if not valid.
+                    }
+                }).catch(() => {
+                });
+            },
         }
         
     }
 </script>
+
+<style>
+@import '~bw-material/dist/index.css';
+</style>

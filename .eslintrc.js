@@ -5,6 +5,7 @@ module.exports = {
         'no-mixed-spaces-and-tabs': 'off'
     },
     "globals": {
-        "process": true
+        "process": true,
+        "require": true
     }
 }

@@ -22,9 +22,10 @@ Vue.use(VeeValidate, {
 
 export default {
     install(Vue, options) {
+        const v = new VeeValidate.Validator();
         Vue.component("field-bw-checks", FGMaterialChecks);      
         Vue.component("field-bw-radios", FGMaterialRadios);
         Vue.component("field-bw-switch", FGMaterialSwitch);
         Vue.component("field-bw-text", FGMaterialText);
-    }
+    },
 };
