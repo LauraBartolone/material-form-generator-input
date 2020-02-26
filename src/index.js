@@ -12,6 +12,14 @@ import VueFormGenerator from 'vue-form-generator';
 Vue.use(VueFormGenerator);
 Vue.component('VueFormGenerator', VueFormGenerator.component);
 
+
+var VeeValidate = require('vee-validate');
+
+Vue.use(VeeValidate, {
+  errorBagName: 'vErrors',
+  inject: false
+});
+
 export default {
     install(Vue, options) {
         Vue.component("field-bw-checks", FGMaterialChecks);      

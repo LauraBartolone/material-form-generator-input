@@ -12,10 +12,11 @@ module.exports = {
             }
         },
         'commonjs': {
+            // explicitly specify unresolvable named exports
             namedExports: {
-              'vue-form-generator': [ 'abstractField' ]
-            }
-          },
+                'vue-form-generator': [ 'abstractField' ],
+            },
+        },
     },
     alias: {
       resolve: {

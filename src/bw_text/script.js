@@ -2,7 +2,7 @@ import {abstractField} from "vue-form-generator";
 
 export default {
   mixins: [abstractField],
-  // inject: ['$validator'],
+  inject: ['$validator'],
   name: "field-bwtext",
   props: {
   },
@@ -23,9 +23,9 @@ export default {
   },
   computed: {
     filteredErrors() {
-      // return this.vErrors.items.filter((item) => {
-      //     return (item.scope == this.validationScope && item.field === this.schema.id)
-      // });
+      return this.vErrors.items.filter((item) => {
+          return (item.scope == this.validationScope && item.field === this.schema.id)
+      });
   }
   },
 }

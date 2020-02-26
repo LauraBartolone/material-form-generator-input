@@ -16,6 +16,7 @@
   "dependencies": {
     "bw-material": "^1.0.2",
     "material-design-icons": "^3.0.1",
+    "vee-validate": "^3.2.5",
     "vue-form-generator": "^2.3.4"
   },
   "devDependencies": {
