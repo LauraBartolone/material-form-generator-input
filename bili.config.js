@@ -10,7 +10,12 @@ module.exports = {
                     }
                 }
             }
-        }
+        },
+        'commonjs': {
+            namedExports: {
+              'vue-form-generator': [ 'abstractField' ]
+            }
+          },
     },
     alias: {
       resolve: {
