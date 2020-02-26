@@ -1,5 +1,6 @@
 <template>
     <div class="app">
+        <h6>MATERIAL TEXT FIELD</h6>
         <vue-form-generator ref="dataTextForm"
             @validated="onValidateData"
             :schema="schemaText"
@@ -9,11 +10,46 @@
         </vue-form-generator> 
         
         {{modelText}}
-        
+
         <bw-material-button v-on:click-btn="submitTextForm"
-            label="submit" class="mb-4" type="contain" color="secondary"
+            label="submit" type="contain" color="secondary"
             size="small"
         ></bw-material-button>
+        <br>
+
+        <h6>MATERIAL RADIO</h6>
+        <vue-form-generator
+            @validated="onValidateData"
+            :schema="schemaRadio"
+            :model="modelRadio"
+            :options="formOptions"
+        >
+        </vue-form-generator> 
+        {{modelRadio}}
+
+        <br>
+        
+        <h6>MATERIAL CHECK</h6>
+        <vue-form-generator
+            @validated="onValidateData"
+            :schema="schemaCheck"
+            :model="modelCheck"
+            :options="formOptions"
+        >
+        </vue-form-generator> 
+        {{modelCheck}}
+        <br>
+        
+        <h6>MATERIAL SWITCH</h6>
+        <vue-form-generator
+            @validated="onValidateData"
+            :schema="schemaSwitch"
+            :model="modelSwitch"
+            :options="formOptions"
+        >
+        </vue-form-generator> 
+        {{modelSwitch}}
+
     </div>
 </template>
 
@@ -61,12 +97,82 @@ Vue.use(BwMaterialFG);
                 text1: "",
                 text2: "",
             },
+
             formOptions: {
                 validateAfterChanged: false,
                 validateAsync: true,
                 validationScope: 'examplescope',
             },
-               
+
+             schemaRadio: {
+                groups: [
+                {
+                    id: 'states',
+                    fields: [
+                    {
+                        type: "bw-radios",
+                        model: "states",
+                        values: [
+                        { code: "0", name: 'ciao' },
+                        { code: "1", name: 'addio' },
+                        ],
+                        radiosOptions: {
+                        value: "code",
+                        name: "name"
+                        },
+                        styleClasses: "color-primary",
+                    },
+                    ]
+                }
+                ]
+            },
+            modelRadio: {
+                states:  { "code": "1", "name": "addio" }
+            },
+            schemaCheck: {
+                groups: [
+                {
+                    id: 'checkStates',
+                    fields: [
+                    {
+                        type: "bw-checks",
+                        model: "prova",
+                        values: [
+                        { code: "0", name: 'ciao' },
+                        { code: "1", name: 'addio' },
+                        { code: "2", name: 'arrivederci' },
+                        ],
+                        radiosOptions: {
+                        value: "code",
+                        name: "name"
+                        },
+                        styleClasses: "color-secondary",
+                    },
+                    ]
+                }
+                ]
+            },
+            modelCheck: {
+                prova:  [{ "code": "1", "name": "addio" }]
+            },
+            schemaSwitch: {
+                groups: [
+                {
+                    fields: [
+                    {
+                        type: "bw-switch",
+                        model: "swich",
+                        switchLabel: 'switch form generator',
+                        styleClasses: "color-primary",
+                    },
+                    ]
+                }
+                ]
+            },
+            modelSwitch: {
+                swich:  true
+            },
+
             }
         },
         components: {
