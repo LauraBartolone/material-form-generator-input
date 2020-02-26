@@ -1,4 +1,3 @@
-import utils from '@js/utils/utils';
 import {abstractField} from "vue-form-generator";
 
 export default {

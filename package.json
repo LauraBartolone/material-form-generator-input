@@ -1,0 +1,33 @@
+{
+  "name": "bw-material-form-generator",
+  "version": "1.0.2",
+  "private": false,
+  "description": "",
+  "author": "",
+  "scripts": {
+    "serve": "vue serve src/index.vue",
+    "build": "npx bili --bundle-node-modules --env.NODE_ENV production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "main": "index.js",
+  "files": [
+    "dist/*"
+  ],
+  "dependencies": {
+    "bw-material": "^1.0.2",
+    "material-design-icons": "^3.0.1",
+    "vue-form-generator": "^2.3.4"
+  },
+  "devDependencies": {
+    "@vue/cli": "^4.2.2",
+    "@vue/cli-plugin-router": "^4.2.2",
+    "@vue/cli-service-global": "^4.2.2",
+    "bili": "^4.8.1",
+    "node-sass": "^4.13.1",
+    "rollup-plugin-vue": "^5.1.6",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "license": "ISC"
+}
