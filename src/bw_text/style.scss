@@ -1,5 +1,11 @@
+:root {
+    --bw-input-error-color: red;
+    --bw-input-error-font: 12px;
+
+}
+
 .color-error+.err-msg {
-    color: red;
-    font-size: 12px;
+    color: var(--bw-input-error-color);
+    font-size: var(--bw-input-error-font);
     padding-left: 16px;
 }

@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div v-for="item in schema.values" 
+    <div v-for="item in values" 
         :key="item[schema.radiosOptions.value || 'id']">        
         <bw-material-check :id="item[schema.radiosOptions.value || 'id']+randId"
             :label="item[schema.radiosOptions.name || 'name']"

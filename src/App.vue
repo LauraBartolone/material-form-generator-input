@@ -50,6 +50,15 @@
         </vue-form-generator> 
         {{modelSwitch}}
 
+        <h6>MATERIAL Select</h6>
+        <vue-form-generator
+            @validated="onValidateData"
+            :schema="schemaSelect"
+            :model="modelSelect"
+            :options="formOptions"
+        >
+        </vue-form-generator> 
+        {{modelSelect}}
     </div>
 </template>
 
@@ -64,8 +73,7 @@ Vue.use(BwMaterialFG);
         data () {
             return {
                 schemaText: {
-                groups: [
-                {
+                groups: [{
                     fields: [
                     {
                         id: "prova id",
@@ -90,8 +98,7 @@ Vue.use(BwMaterialFG);
                         rules: "required|min:5"
                     },
                     ]
-                }
-                ]
+                }]
             },
             modelText: {
                 text1: "",
@@ -172,7 +179,49 @@ Vue.use(BwMaterialFG);
             modelSwitch: {
                 swich:  true
             },
+            schemaSelect: {
+                groups: [{
+                    fields: [
+                    {
+                        id: "ex-select-iid",
+                        type: "bw-select",
+                        inputType: 'contain',
+                        placeholder: "prova placeholder",
+                        textLabel: "select label",
+                        color: "primary",
+                        model: "slect1",
+                        rules: "required",
+                        options: [
+                            {"name": "prova 10", code: "10", id: 'a10'}, 
+                            {"name": "prova 20", code: "20", id: 'a20'}, 
+                            {"name": "prova 30", code: "30", id: 'a30'},
 
+                        ]
+                    },
+                    {
+                        id: "prova id2",
+                        type: "bw-multiselect",
+                        inputType: 'outline',
+                        placeholder: "prova2 placeholder",
+                        textLabel: "select multiple label",
+                        color: "primary",
+                        model: "multiselect",
+                        rules: "required",
+                        options: [
+                            {"name": "prova 10", code: "10", id: 'a10'}, 
+                            {"name": "prova 20", code: "20", id: 'a20'}, 
+                            {"name": "prova 30", code: "30", id: 'a30'},
+
+                        ]
+                    },
+                    ]
+                }]
+            },
+            modelSelect: {
+                slect1: '',
+                multiselect: [],
+
+            },
             }
         },
         components: {
@@ -195,4 +244,42 @@ Vue.use(BwMaterialFG);
 
 <style>
 @import '~bw-material/dist/index.css';
+:root {
+    --mdc-theme-primary: #AE1B21;
+    --mdc-rgba-theme-primary: 174, 27, 33;
+
+    --mdc-theme-on-primary: #ffffff;
+
+    --mdc-theme-text-primary-on-light: #000000;
+    --mdc-theme-text-secondary-on-light: #000000;
+
+    --mdc-theme-secondary: #0b156b;
+    --mdc-rgba-theme-secondary: 11, 21, 107;
+
+
+    --mdc-theme-on-secondary: #cf96e6;
+    --mdc-theme--secondary-bg: #000000;
+
+    --mdc-theme--primary-bg: #f5f8f6;
+    --mdc-theme-secondary-bg: #ffee00;
+
+
+    --contain-input-bg: rgba(0, 0, 0, 0.12);
+
+    --label-color: rgba(0, 0, 0, 0.6);
+    --label-color-secondary: rgba(0, 0, 0, 0.6);
+
+    --footer-text-color: var(--bw-text-link);
+    --footer-text-hover-color: linear-gradient(93.61deg, #EB643F -0.04%, #F8017A 49.25%, #994E9D 99.89%);
+    --footer-divider-color: linear-gradient(93.61deg, #EB643F -0.04%, #F8017A 49.25%, #994E9D 99.89%);
+
+
+    --icon-selected-color: pink;
+
+    --bw-text-link: rgb(149, 149, 149);
+    --bw-text-link-hover: rgb(29, 29, 29);
+
+    --mdc-chip-selected: #158b15;
+    --btn-text-color-secondary: white;
+}
 </style>
