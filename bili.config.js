@@ -11,6 +11,13 @@ module.exports = {
                 }
             }
         },
+        postcss: {
+            minimize: {
+                preset: ['advanced', {
+                    discardDuplicates: true
+                }]
+            }
+        },
         'commonjs': {
             // explicitly specify unresolvable named exports
             namedExports: {

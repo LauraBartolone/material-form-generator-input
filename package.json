@@ -1,6 +1,6 @@
 {
   "name": "bw-material-form-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "private": false,
   "description": "",
   "author": "",
@@ -14,7 +14,7 @@
     "dist/*"
   ],
   "dependencies": {
-    "bw-material": "^1.0.6",
+    "bw-material": "^1.0.20",
     "material-design-icons": "^3.0.1",
     "vee-validate": "^2.2.15",
     "vue-form-generator": "^2.3.4"
