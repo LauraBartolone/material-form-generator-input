@@ -1,6 +1,5 @@
 <template>
 <div>
-    {{schema.id}}
     <bw-material-text-field v-model="value"
         :class="{'color-error': filteredErrors.length > 0}"
         :placeholder="schema.placeholder || ''"
@@ -10,7 +9,7 @@
         :color="schema.color || 'primary'"
         :use-native-validation="false"
         v-validate.disable="schema.rules" :data-vv-scope="validationScope" 
-        :name="schema.id || schema.id || randId"
+        :name="schema.name || schema.id || randId"
     >
         <bw-material-floating-label :for="schema.id || randId">
             {{schema.textLabel}}
